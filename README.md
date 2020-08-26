@@ -19,12 +19,9 @@ Then run the program by using:
 Then the program result will be printed on the screen. Shown is the frequency of appearance of 16 values of balanced nibble after 10 rounds of toy-cipher encryption.
 
 ## Second Part
-Since the data complexity of verifying zero correlation is as high as 2^32, we divide an experiment into 16 parts in parallel, so we need to use script files
-named **multi_thread.sh**  
+Since the data complexity of verifying zero correlation is as high as 2^32.  
 To run our source code, one can first compile our source code using the following command:  
 `g++ --std c++11 test_ZC.cpp -o test_ZC`  
 In order to experiment in parallel one can run:  
-`chmod 755 ./multi_thread.sh`   
-And then run the experiment  
-`./multi_thread.sh`  
+`./test_ZC > /test/test.txt`  
 Experiment results will exist in subfolders named **test**
