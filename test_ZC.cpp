@@ -111,7 +111,7 @@ vector<vector<int>> keySchedule(vector<vector<int>> in )
 
 
 
-int testTK1( int num )
+int testTK1()
 {
 	
     //generate all keys at random
@@ -180,7 +180,7 @@ int testTK1( int num )
 	//linear approximation counter
     unsigned long int counter = 0;
 
-    for ( int i1 = num; i1 < num+1; i1++)
+    for ( int i1 = 0; i1 < 16; i1++)
     {
         for ( int i2 = 0; i2 < 16; i2++)
         {
@@ -223,7 +223,7 @@ int testTK1( int num )
 
                                     }
                                     in = subByte (in , tk1);
-									in = shiftNible(in);
+				    in = shiftNible(in);
 									
                                     int XOR = 0;
 									//Calculate a vector XOR:(K & alpha2)+(P & alpha1)+(Ex & beta)
@@ -275,29 +275,9 @@ int testTK1( int num )
 
 int main(int argc,char * argv[])
 {
-    printf("Experimental verification of distinguisher on TK1.\n");
-    
+    printf("Experimental verification of distinguisher on toy-cipher.\n");
 
-    //input canshu
-	int origin;
-
-	printf("input %d parameter \n" , argc);
-
-	if(argc!=2)
-	{
-		printf("parameter number error!!");
-		exit(0);
-	}
-	else
-    {
-        origin = atoi(argv[1]);
-    }
-    printf("begin num = %d  ",origin );
-
-
-
-    testTK1(origin);
-
+    testTK1();
 
     return 0;
 }
